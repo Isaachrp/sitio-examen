@@ -1,0 +1,298 @@
+/* Variables de Color */
+:root {
+    --oxford-blue: #111111;
+    --old-gold: #ff6600;
+    --old-gold-hover: #cc5200;
+    --snow-white: #FFFFFF;
+    --light-bg: #F7F9FC;
+    --text-dark: #8a8a8a;
+    --text-light: #F9F9F9;
+}
+
+/* Tipografía y Base */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--snow-white);
+    color: var(--text-dark);
+}
+
+.section-title {
+    color: var(--oxford-blue);
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: var(--old-gold);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--oxford-blue);
+    padding: 15px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.brand-icon {
+    color: var(--old-gold);
+    font-size: 1.8rem;
+}
+
+.brand-text {
+    font-weight: 700;
+    color: var(--snow-white);
+    letter-spacing: 1px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--old-gold);
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 102, 0, 0.5);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 102, 0, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    background-attachment: fixed;
+    margin-top: -76px;
+    /* Compensar altura del navbar */
+    padding-top: 76px;
+}
+
+.hero-content {
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cta-btn {
+    background-color: var(--old-gold);
+    border-color: var(--old-gold);
+    color: var(--oxford-blue);
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-btn:hover {
+    background-color: var(--old-gold-hover);
+    border-color: var(--old-gold-hover);
+    color: var(--snow-white);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Destinations Cards */
+.destination-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    height: 100%;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.destination-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-img-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.card-body {
+    padding: 1.5rem;
+    background-color: var(--snow-white);
+}
+
+.card-title {
+    color: var(--oxford-blue);
+    font-weight: 700;
+}
+
+.card-text {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-link {
+    color: var(--old-gold);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.card-link:hover {
+    color: var(--oxford-blue);
+}
+
+/* Testimonials */
+.testimonials-section {
+    background-color: var(--oxford-blue);
+    position: relative;
+}
+
+.testimonials-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Pattern sutil */
+    background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    opacity: 0.5;
+}
+
+.testimonial-card {
+    background: transparent;
+    color: var(--snow-white);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.testimonial-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--old-gold);
+    margin: 0 auto 1.5rem;
+}
+
+.testimonial-text {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.testimonial-author {
+    font-weight: 700;
+    color: var(--old-gold);
+    margin-bottom: 0.2rem;
+}
+
+.testimonial-role {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Bootstrap Carousel Customization */
+.carousel-indicators [data-bs-target] {
+    background-color: var(--snow-white);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.carousel-indicators .active {
+    background-color: var(--old-gold);
+    transform: scale(1.2);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+/* Footer */
+.footer {
+    background-color: #050505;
+    border-top: 4px solid var(--old-gold);
+}
+
+.social-icons a {
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: var(--old-gold) !important;
+    transform: translateY(-3px);
+}
+
+/* Smooth Scrolling Offset */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 76px;
+    /* Offset for sticky navbar */
+}
+
+/* Contact Cards */
+.contact-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Footer Link Hover */
+.footer-link {
+    color: var(--snow-white) !important;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--old-gold) !important;
+    padding-left: 5px;
+}
